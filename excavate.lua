@@ -148,13 +148,13 @@ local function tryForwards()
 		if not collect() then
 			returnSupplies()
 		end
-	else
+	end
 
 	if turtle.digDown() then
 		if not collect() then
 			returnSupplies()
 		end
-	else
+	end
 	return true
 end
 
