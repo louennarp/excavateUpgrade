@@ -143,7 +143,7 @@ local function tryForwards()
 
 	xPos = xPos + xDir
 	zPos = zPos + zDir
-
+	
 	if turtle.digUp() then
 		if not collect() then
 			returnSupplies()
