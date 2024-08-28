@@ -351,6 +351,14 @@ while not done do
 			break
 		end
 	end
+	if turtle.detectDown() then
+		if turtle.digDown() then
+			if not collect() then
+				returnSupplies()
+			end
+		end
+	end
+	
 end
 
 print( "Returning to surface..." )
