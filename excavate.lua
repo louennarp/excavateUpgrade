@@ -345,7 +345,7 @@ while not done do
 			alternate = 1 - alternate
 		end
 	end
-	for i=3,10 do
+	for i=1,3 do
 		if not tryDown() then
 			done = true
 			break
