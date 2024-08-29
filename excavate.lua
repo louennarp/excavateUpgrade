@@ -77,10 +77,11 @@ local function collect()
 		collected = nTotalItems
 		if math.fmod(collected + unloaded, 50) == 0 then
 			local fuelLevel = turtle.getFuelLevel()
+			local fuelLimit = turtle.getFuelLimit()
 			if fuelLevel == "unlimited" then
 				print( "Mined "..(collected + unloaded).." items.")
 			end
-			print( "Mined "..(collected + unloaded).." items. ["..(math.floor(turtle.getFuelLevel()/turtle.getFuelLimit()+0.5)).."% fuel]")
+			print( "Mined "..(collected + unloaded).." items. ["..(math.floor((fuelLimit-fuelLevel)/fuelLimit+0.5)).."% fuel]")
 		end
 	end
 
