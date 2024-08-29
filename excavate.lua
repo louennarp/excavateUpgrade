@@ -76,7 +76,11 @@ local function collect()
 	if nTotalItems > collected then
 		collected = nTotalItems
 		if math.fmod(collected + unloaded, 50) == 0 then
-			print( "Mined "..(collected + unloaded).." items." )
+			local fuelLevel = turtle.getFuelLevel()
+			if fuelLevel == "unlimited" then
+				print( "Mined "..(collected + unloaded).." items.")
+			end
+			print( "Mined "..(collected + unloaded).." items. ["..(math.floor(turtle.getFuelLevel()/turtle.getFuelLimit()+0.5)).."% fuel]")
 		end
 	end
 
@@ -92,8 +96,6 @@ function refuel( ammount )
 	if fuelLevel == "unlimited" then
 		return true
 	end
-
-	print( "Curent fuel level : "..(fuelLevel))
 
 	local needed = ammount or (xPos + zPos + depth + 2)
 	if turtle.getFuelLevel() < needed then
