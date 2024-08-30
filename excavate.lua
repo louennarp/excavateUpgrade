@@ -81,7 +81,7 @@ local function collect()
 			if fuelLevel == "unlimited" then
 				print( "Mined "..(collected + unloaded).." items.")
 			end
-			local fuelPercentage = math.floor((fuelLimit-fuelLevel)/fuelLimit*100+0.5)
+			local fuelPercentage = math.floor(fuelLevel/fuelLimit*100+0.5)
 			print( "Mined "..(collected + unloaded).." items. ["..(fuelPercentage).."% fuel]")
 		end
 	end
